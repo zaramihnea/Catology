@@ -3,6 +3,7 @@ AI project for recognizing cat breeds from a brief description, and natural lang
 
 Project created by Negoita Mihai, Radu Roxana & Zara Mihnea
 
+https://docs.google.com/document/d/146rJBVBNd_GztzIaK82i15KDaOp2YilXdwXJ_kJE268/edit?usp=sharing
 ## Technologies used:
 - **Pandas**, **Numpy** for calculations and data manipulation
 - **Scikit-learn** for training models and data preprocessing
