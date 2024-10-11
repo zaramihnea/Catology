@@ -48,7 +48,7 @@ Each Container is a Python process. The Python processes in the diagram are cont
 6. Save the model(s) on the disk for later usage
 
 ### Implement the other smaller components
-- **Request Parser**
+- **User Request Parser**
 
 Google OpenAI API can be used for this or just simple language model templating
 - **Template / Model that outputs attributes for a breed**
@@ -59,4 +59,8 @@ Language model templating can be used here
 OpenAI API can be used or language model templating
 - **Text generator for breed**
 
-OpenAI APIor  language model templating
+OpenAI API or  language model templating
+
+- **ML Model / Ensemble container**
+
+Use Scikit-learn to combine the models that are saved on the disk or cloud and output the breed prediction
