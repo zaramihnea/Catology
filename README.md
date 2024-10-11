@@ -61,6 +61,10 @@ OpenAI API can be used or language model templating
 
 OpenAI API or  language model templating
 
+- **Preprocessor container**
+
+Use Scikit-learn to create a pipeline of preprocessing steps for the data that were used in training
+
 - **ML Model / Ensemble container**
 
 Use Scikit-learn to combine the models that are saved on the disk or cloud and output the breed prediction
