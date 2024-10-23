@@ -954,9 +954,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/zaramihnea/Developer/Uni/An3Sem1/AI/Catology/catology-backend/bin/lab3.csproj",
-      "projectName": "lab3",
-      "projectPath": "/Users/zaramihnea/Developer/Uni/An3Sem1/AI/Catology/catology-backend/bin/lab3.csproj",
+      "projectUniqueName": "/Users/zaramihnea/Developer/Uni/An3Sem1/AI/Catology/catology-backend/bin/lab4.csproj",
+      "projectName": "lab4",
+      "projectPath": "/Users/zaramihnea/Developer/Uni/An3Sem1/AI/Catology/catology-backend/bin/lab4.csproj",
       "packagesPath": "/Users/zaramihnea/.nuget/packages/",
       "outputPath": "/Users/zaramihnea/Developer/Uni/An3Sem1/AI/Catology/catology-backend/bin/obj/",
       "projectStyle": "PackageReference",

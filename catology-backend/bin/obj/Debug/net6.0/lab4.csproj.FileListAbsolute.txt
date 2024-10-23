@@ -1,0 +1,12 @@
+/Users/zaramihnea/Developer/Uni/An3Sem1/AI/Catology/catology-backend/bin/obj/Debug/net6.0/lab4.GeneratedMSBuildEditorConfig.editorconfig
+/Users/zaramihnea/Developer/Uni/An3Sem1/AI/Catology/catology-backend/bin/obj/Debug/net6.0/lab4.AssemblyInfoInputs.cache
+/Users/zaramihnea/Developer/Uni/An3Sem1/AI/Catology/catology-backend/bin/obj/Debug/net6.0/lab4.AssemblyInfo.cs
+/Users/zaramihnea/Developer/Uni/An3Sem1/AI/Catology/catology-backend/bin/obj/Debug/net6.0/lab4.csproj.CoreCompileInputs.cache
+/Users/zaramihnea/Developer/Uni/An3Sem1/AI/Catology/catology-backend/bin/obj/Debug/net6.0/lab4.sourcelink.json
+/Users/zaramihnea/Developer/Uni/An3Sem1/AI/Catology/catology-backend/bin/obj/Debug/net6.0/lab4.dll
+/Users/zaramihnea/Developer/Uni/An3Sem1/AI/Catology/catology-backend/bin/obj/Debug/net6.0/refint/lab4.dll
+/Users/zaramihnea/Developer/Uni/An3Sem1/AI/Catology/catology-backend/bin/obj/Debug/net6.0/lab4.pdb
+/Users/zaramihnea/Developer/Uni/An3Sem1/AI/Catology/catology-backend/bin/lab4.deps.json
+/Users/zaramihnea/Developer/Uni/An3Sem1/AI/Catology/catology-backend/bin/lab4.dll
+/Users/zaramihnea/Developer/Uni/An3Sem1/AI/Catology/catology-backend/bin/obj/Debug/net6.0/ref/lab4.dll
+/Users/zaramihnea/Developer/Uni/An3Sem1/AI/Catology/catology-backend/bin/lab4.pdb
