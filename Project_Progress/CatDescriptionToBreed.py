@@ -272,6 +272,25 @@ def calculate_probabilities(dataset: pd.DataFrame) -> Dict[str, Any]:
     return probabilities
 
 
+def generate_prediction_message(description: str, predicted_breed: str, confidence: float, model: Any) -> str:
+    """Generate a natural language message about the predicted breed using LLM."""
+    prompt = f"""
+    Given this cat description: "{description}"
+    I predicted it's a {predicted_breed} cat (with {confidence:.2f} confidence).
+
+    Generate a natural, friendly message explaining this prediction. The message should:
+    1. Reference specific aspects of the description that align with this breed
+    2. Be concise (2-3 sentences)
+    3. Be friendly and enthusiastic
+    4. Mention the confidence level in a natural way
+
+    Return ONLY the message, no additional formatting.
+    """
+
+    response = model.generate_content(prompt)
+    return response.text.strip()
+
+
 def main():
     parser = argparse.ArgumentParser(description='Predict cat breed from description')
     parser.add_argument('description', type=str, help='Description of the cat')
@@ -295,9 +314,9 @@ def main():
     # Predict breed
     predicted_breed, confidence = predict_breed(features)
 
-    # Only output the prediction
-    print(predicted_breed)
-
+    # Generate and print the prediction message
+    message = generate_prediction_message(args.description, predicted_breed, confidence, model)
+    print(message)
 
 if __name__ == "__main__":
     main()
