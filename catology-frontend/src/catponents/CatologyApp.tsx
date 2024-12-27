@@ -7,6 +7,15 @@ interface Message {
   sender: 'user' | 'ai';
 }
 
+const formatMessage = (text: string) => {
+  return text.split(/(\*\*.*?\*\*)/g).map((part, index) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return <strong key={index}>{part.slice(2, -2)}</strong>;
+    }
+    return part;
+  });
+};
+
 const CatologyApp = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
@@ -74,7 +83,7 @@ const CatologyApp = () => {
                   : 'bg-gray-700 text-gray-100'
               } shadow-md transition-all duration-300 ease-in-out transform hover:scale-105`}
             >
-              {message.text}
+              <div className="response-text whitespace-pre-line">{formatMessage(message.text)}</div>
             </div>
           </div>
         ))}
