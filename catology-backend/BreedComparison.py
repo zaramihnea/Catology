@@ -28,12 +28,32 @@ def extract_breed_names(query: str) -> Tuple[str, str]:
     return (breeds[0].strip(), breeds[1].strip())
 
 
+def normalize_breed_name(breed: str, dataset: pd.DataFrame) -> str:
+    """Normalize breed name to match dataset column names."""
+    # Get all column names that start with 'Race_'
+    race_columns = [col for col in dataset.columns if col.startswith('Race_')]
+    
+    # Remove 'Race_' prefix and create a mapping of normalized names to actual column names
+    breed_mapping = {col.replace('Race_', '').lower(): col.replace('Race_', '') 
+                    for col in race_columns}
+    
+    # Normalize the input breed name
+    normalized_breed = breed.lower()
+    
+    # Return the matching breed name from our dataset, or the original if not found
+    return breed_mapping.get(normalized_breed, breed)
+
+
 def get_breed_attributes(dataset: pd.DataFrame, breed: str) -> Dict[str, Any]:
     """Calculate average values for all attributes for a specific breed."""
-    breed_data = dataset[dataset[f'Race_{breed}'] == True]
+    # Normalize the breed name to match dataset columns
+    normalized_breed = normalize_breed_name(breed, dataset)
+    
+    # Filter dataset for the specific breed
+    breed_data = dataset[dataset[f'Race_{normalized_breed}'] == True]
 
     if len(breed_data) == 0:
-        raise ValueError(f"No data found for breed: {breed}")
+        raise ValueError(f"No data found for breed: {normalized_breed}")
 
     attributes = {}
 
@@ -109,13 +129,13 @@ def main():
     args = parser.parse_args()
 
     try:
-        # Extract breed names
-        breed1, breed2 = extract_breed_names(args.query)
-
-        # Load dataset
+        # Load dataset first (we need it for breed name normalization)
         script_dir = os.path.dirname(os.path.abspath(__file__))
         dataset_path = os.path.join(script_dir, 'utils', 'Dataset_Preprocessed.xlsx')
         dataset = pd.read_excel(dataset_path)
+
+        # Extract breed names
+        breed1, breed2 = extract_breed_names(args.query)
 
         # Get attributes for both breeds
         attrs1 = get_breed_attributes(dataset, breed1)
